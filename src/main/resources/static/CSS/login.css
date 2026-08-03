@@ -1,0 +1,577 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   LOGIN CONTAINER
+========================================= */
+
+.login-container {
+    width: 95%;
+    max-width: 1200px;
+    min-height: 700px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   LEFT PANEL
+========================================= */
+
+.login-left {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb, #3b82f6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+}
+
+.login-left::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+    top: -120px;
+    left: -120px;
+}
+
+.login-left::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(255,255,255,.05);
+    border-radius: 50%;
+    bottom: -100px;
+    right: -100px;
+}
+
+.branding {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.logo-icon {
+    font-size: 85px;
+    margin-bottom: 30px;
+}
+
+.branding h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.branding p {
+    font-size: 17px;
+    line-height: 1.8;
+    opacity: .95;
+    max-width: 430px;
+}
+
+/* =========================================
+   RIGHT PANEL
+========================================= */
+
+.login-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: #ffffff;
+}
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+}
+
+.login-card h2 {
+    font-size: 34px;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.login-card p {
+    color: #64748b;
+    margin-bottom: 35px;
+    font-size: 15px;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dbe4ee;
+    border-radius: 12px;
+    font-size: 15px;
+    background: #ffffff;
+    transition: all .3s ease;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+/* =========================================
+   PASSWORD FIELD
+========================================= */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 55px;
+}
+
+.password-box i {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    color: #64748b;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color .3s ease;
+}
+
+.password-box i:hover {
+    color: #2563eb;
+}
+
+/* =========================================
+   REMEMBER ME & FORGOT PASSWORD
+========================================= */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.forgot-password:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+    display: none;
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(37,99,235,.25);
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(37,99,235,.35);
+}
+
+.login-btn:active {
+    transform: scale(.98);
+}
+
+.login-btn:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+    display: none;
+    margin-top: 20px;
+    padding: 14px;
+    text-align: center;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.loading i {
+    margin-right: 8px;
+}
+
+/* =========================================
+   LOGIN FOOTER
+========================================= */
+
+.login-footer {
+    margin-top: 35px;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+}
+
+.login-footer p {
+    margin-bottom: 6px;
+    color: #334155;
+    font-weight: 600;
+}
+
+.login-footer small {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+.login-card {
+    animation: slideUp .7s ease;
+}
+
+.branding {
+    animation: fadeInLeft .8s ease;
+}
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeInLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+/* =========================================
+   INPUT PLACEHOLDER
+========================================= */
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* =========================================
+   INPUT HOVER
+========================================= */
+
+.form-group input:hover {
+    border-color: #93c5fd;
+}
+
+/* =========================================
+   SMOOTH TRANSITIONS
+========================================= */
+
+button,
+input,
+a,
+i {
+    transition: all .3s ease;
+}
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .login-container {
+        width: 95%;
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .login-left {
+        min-height: 320px;
+        padding: 40px;
+    }
+
+    .branding h1 {
+        font-size: 32px;
+    }
+
+    .branding p {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .login-container {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .login-left {
+        padding: 35px 25px;
+        min-height: 280px;
+    }
+
+    .login-right {
+        padding: 35px 25px;
+    }
+
+    .logo-icon {
+        font-size: 60px;
+    }
+
+    .branding h1 {
+        font-size: 28px;
+    }
+
+    .branding p {
+        font-size: 14px;
+    }
+
+    .login-card h2 {
+        font-size: 28px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        border-radius: 12px;
+    }
+
+    .login-left {
+        padding: 25px 20px;
+        min-height: 240px;
+    }
+
+    .login-right {
+        padding: 25px 20px;
+    }
+
+    .logo-icon {
+        font-size: 50px;
+    }
+
+    .branding h1 {
+        font-size: 24px;
+    }
+
+    .branding p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .login-card h2 {
+        font-size: 24px;
+    }
+
+    .login-card p {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .login-btn {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .loading {
+        font-size: 14px;
+    }
+
+    .login-footer {
+        margin-top: 25px;
+    }
+
+}
+
+/* =========================================
+   CUSTOM SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+/* =========================================
+   TEXT SELECTION
+========================================= */
+
+::selection {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* =========================================
+   REMOVE AUTOFILL BACKGROUND
+========================================= */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+    -webkit-text-fill-color: #1e293b;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+button:focus,
+input:focus,
+a:focus {
+    outline: none;
+}
+
+/* =========================================
+   END OF FILE
+========================================= */

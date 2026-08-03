@@ -1,0 +1,1375 @@
+/* ==========================================================
+   Threat Intelligence Portal
+   Dashboard CSS
+   ========================================================== */
+
+/* ===============================
+   Google Font
+================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===============================
+   Reset
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f4f7fb;
+
+    color:#1f2937;
+
+    display:flex;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/* ===============================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e5e7eb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ===============================
+   Sidebar
+================================ */
+
+.sidebar{
+
+    width:260px;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:25px 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.15);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:40px;
+
+}
+
+.logo i{
+
+    font-size:34px;
+
+    color:#38bdf8;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin:6px 15px;
+
+}
+
+.sidebar li a{
+
+    text-decoration:none;
+
+    color:#d1d5db;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.sidebar li a i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.sidebar li:hover a{
+
+    background:#1e293b;
+
+    color:#fff;
+
+}
+
+.sidebar li.active a{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    box-shadow:0 8px 20px rgba(37,99,235,.35);
+
+}
+
+/* ===============================
+   Main Content
+================================ */
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:30px;
+
+}
+
+/* ===============================
+   Header
+================================ */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#fff;
+
+    padding:22px 28px;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    margin-bottom:30px;
+
+}
+
+header h1{
+
+    font-size:28px;
+
+    color:#111827;
+
+    font-weight:700;
+
+}
+
+header p{
+
+    color:#6b7280;
+
+    margin-top:6px;
+
+}
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#eff6ff;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+}
+
+.profile i{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:20px;
+
+}
+
+.profile span{
+
+    font-weight:600;
+
+    color:#1e293b;
+
+}
+/* ==========================================================
+   Dashboard Cards
+========================================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:6px;
+
+    height:100%;
+
+    background:#2563eb;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.15);
+
+}
+
+.card i{
+
+    font-size:34px;
+
+    color:#2563eb;
+
+    margin-bottom:18px;
+
+}
+
+.card h3{
+
+    color:#6b7280;
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.card h2{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.card small{
+
+    color:#9ca3af;
+
+    font-size:13px;
+
+}
+
+/* ==========================================================
+   Quick Actions
+========================================================== */
+
+.quick-actions{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.quick-actions h2{
+
+    font-size:24px;
+
+    color:#111827;
+
+    margin-bottom:22px;
+
+}
+
+.action-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+.btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+}
+
+.btn i{
+
+    font-size:17px;
+
+}
+
+/* ==========================================================
+   Dashboard Filters
+========================================================== */
+
+.dashboard-filters{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.dashboard-filters h2{
+
+    margin-bottom:20px;
+
+    color:#111827;
+
+    font-size:23px;
+
+}
+
+.filter-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:18px;
+
+}
+
+.filter-container input,
+
+.filter-container select{
+
+    padding:14px 16px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.3s;
+
+    background:#ffffff;
+
+}
+
+.filter-container input:focus,
+
+.filter-container select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+.filter-container input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+/* ==========================================================
+   Dashboard Summary
+========================================================== */
+
+.dashboard-summary{
+
+    margin-top:30px;
+
+    margin-bottom:35px;
+
+}
+
+.dashboard-summary .card{
+
+    text-align:center;
+
+}
+
+.dashboard-summary .card h2{
+
+    font-size:24px;
+
+    margin-top:12px;
+
+    word-break:break-word;
+
+}
+
+.dashboard-summary .card small{
+
+    display:block;
+
+    margin-top:10px;
+
+}
+/* ==========================================================
+   Tables
+========================================================== */
+
+.dashboard-table{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.table-header h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:24px;
+
+    color:#111827;
+
+}
+
+.table-header i{
+
+    color:#2563eb;
+
+}
+
+.table-count{
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.table-responsive{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#2563eb;
+
+}
+
+thead th{
+
+    color:#ffffff;
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+tbody td{
+
+    padding:16px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    color:#374151;
+
+    font-size:14px;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+/* ==========================================================
+   Status Badges
+========================================================== */
+
+.status{
+
+    display:inline-block;
+
+    padding:7px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    min-width:90px;
+
+}
+
+.status.critical{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+.status.high{
+
+    background:#ffedd5;
+
+    color:#ea580c;
+
+}
+
+.status.medium{
+
+    background:#fef9c3;
+
+    color:#ca8a04;
+
+}
+
+.status.low{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+}
+
+.status.online{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.safe{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+/* ==========================================================
+   System Status
+========================================================== */
+
+.system-status{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.system-status h2{
+
+    margin-bottom:25px;
+
+    color:#111827;
+
+}
+
+.status-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.status-card{
+
+    background:#f8fafc;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    border:1px solid #e5e7eb;
+
+}
+
+.status-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,.12);
+
+}
+
+.status-card i{
+
+    font-size:36px;
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+
+}
+
+.status-card h3{
+
+    color:#111827;
+
+    margin-bottom:12px;
+
+    font-size:18px;
+
+}
+
+.status-card p{
+
+    font-weight:600;
+
+    color:#16a34a;
+
+}
+
+/* ==========================================================
+   Charts
+========================================================== */
+
+.charts-section{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.chart-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.chart-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.chart-header h2{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#111827;
+
+    font-size:22px;
+
+}
+
+.chart-header i{
+
+    color:#2563eb;
+
+}
+
+.chart-card canvas{
+
+    width:100% !important;
+
+    height:340px !important;
+
+}
+
+/* ==========================================================
+   Dashboard Information
+========================================================== */
+
+.dashboard-table strong{
+
+    color:#111827;
+
+    font-weight:600;
+
+}
+/* ==========================================================
+   Footer
+========================================================== */
+
+footer{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-top:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    text-align:center;
+
+}
+
+.footer-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.footer-content p{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   Utilities
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.mt-10{
+
+    margin-top:10px;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mb-10{
+
+    margin-bottom:10px;
+
+}
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================================
+   Animations
+========================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes slideLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+header{
+
+    animation:fadeIn .6s ease;
+
+}
+
+.cards{
+
+    animation:fadeIn .8s ease;
+
+}
+
+.dashboard-table{
+
+    animation:fadeIn 1s ease;
+
+}
+
+.system-status{
+
+    animation:fadeIn 1.2s ease;
+
+}
+
+.charts-section{
+
+    animation:zoomIn 1s ease;
+
+}
+
+.sidebar{
+
+    animation:slideLeft .5s ease;
+
+}
+
+/* ==========================================================
+   Hover Effects
+========================================================== */
+
+.card,
+
+.status-card,
+
+.chart-card,
+
+.dashboard-table,
+
+.quick-actions,
+
+.dashboard-filters{
+
+    transition:all .3s ease;
+
+}
+
+.chart-card:hover,
+
+.dashboard-table:hover,
+
+.quick-actions:hover,
+
+.dashboard-filters:hover,
+
+.system-status:hover{
+
+    box-shadow:0 18px 45px rgba(37,99,235,.12);
+
+}
+
+input:hover,
+
+select:hover{
+
+    border-color:#2563eb;
+
+}
+
+input,
+
+select{
+
+    transition:.3s;
+
+}
+
+/* ==========================================================
+   Responsive Design
+========================================================== */
+
+@media (max-width:1200px){
+
+    .cards{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .charts-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+    .main-content{
+
+        margin-left:220px;
+
+        width:calc(100% - 220px);
+
+        padding:20px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .filter-container{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+    header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    body{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .main-content{
+
+        width:100%;
+
+        margin-left:0;
+
+        padding:15px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .filter-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .action-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        justify-content:center;
+
+    }
+
+    .status-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-card canvas{
+
+        height:280px !important;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    header h1{
+
+        font-size:22px;
+
+    }
+
+    header p{
+
+        font-size:13px;
+
+    }
+
+    .card h2{
+
+        font-size:26px;
+
+    }
+
+    .table-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    thead th,
+
+    tbody td{
+
+        padding:12px;
+
+        font-size:13px;
+
+    }
+
+    footer{
+
+        padding:18px;
+
+    }
+
+}
+
+/* ==========================================================
+   End of Dashboard CSS
+========================================================== */

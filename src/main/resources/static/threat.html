@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Threat Management | Threat Intelligence Portal</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>TIP</h2>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="admin.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="category.html">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Categories
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="threat.html">
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threats
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="users.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                Users
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+    <!-- Header -->
+
+    <header>
+
+        <div>
+
+            <h1>
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threat Management
+
+            </h1>
+
+            <p>
+
+                Detect, Monitor and Manage Cyber Security Threats
+
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- ================= DASHBOARD CARDS ================= -->
+
+    <section class="status-grid">
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-bug"></i>
+
+            <h3>Total Threats</h3>
+
+            <p id="totalThreats">0</p>
+
+        </div>
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h3>Critical</h3>
+
+            <p id="criticalThreats" class="online">0</p>
+
+        </div>
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-shield-virus"></i>
+
+            <h3>Resolved</h3>
+
+            <p id="resolvedThreats" class="safe">0</p>
+
+        </div>
+
+        <div class="status-card">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <h3>Active</h3>
+
+            <p id="activeThreats">0</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= THREAT FORM ================= -->
+
+    <section class="dashboard-table">
+
+        <h2>
+
+            <i class="fa-solid fa-plus-circle"></i>
+
+            Add New Threat
+
+        </h2>
+
+        <form id="threatForm">
+
+            <input type="hidden" id="threatId">
+
+            <div class="form-group">
+
+                <label>
+
+                    Threat Name
+
+                </label>
+
+                <input
+                        type="text"
+                        id="threatName"
+                        placeholder="Enter Threat Name"
+                        required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Category
+
+                </label>
+
+                <select id="category" required>
+
+                    <option value="">
+
+                        Select Category
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Severity
+
+                </label>
+
+                <select id="severity">
+
+                    <option value="Low">Low</option>
+
+                    <option value="Medium">Medium</option>
+
+                    <option value="High">High</option>
+
+                    <option value="Critical">Critical</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Status
+
+                </label>
+
+                <select id="status">
+
+                    <option value="Active">
+
+                        Active
+
+                    </option>
+
+                    <option value="Under Investigation">
+
+                        Under Investigation
+
+                    </option>
+
+                    <option value="Resolved">
+
+                        Resolved
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Date Reported
+
+                </label>
+
+                <input
+                        type="date"
+                        id="dateReported">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Description
+
+                </label>
+
+                <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Enter Threat Description"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+
+                    Mitigation
+
+                </label>
+
+                <textarea
+                        id="mitigation"
+                        rows="5"
+                        placeholder="Enter Mitigation Strategy"></textarea>
+
+            </div>
+
+            <div style="margin-top:20px; display:flex; gap:15px;">
+                <button type="submit" class="btn" id="saveBtn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Threat
+
+                </button>
+
+                <button type="button"
+                        class="btn"
+                        id="updateBtn"
+                        style="display:none;">
+
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                    Update Threat
+
+                </button>
+
+                <button type="reset"
+                        class="btn"
+                        id="clearBtn">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <!-- ================= SEARCH & FILTER ================= -->
+
+    <section class="dashboard-table">
+
+        <h2>
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Search & Filter
+
+        </h2>
+
+        <div class="form-group">
+
+            <input
+                    type="text"
+                    id="searchThreat"
+                    placeholder="Search Threat by Name">
+
+        </div>
+
+        <div class="form-group">
+
+            <select id="filterSeverity">
+
+                <option value="">All Severity</option>
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+    <!-- ================= THREAT TABLE ================= -->
+
+    <section class="dashboard-table">
+
+        <h2>
+
+            <i class="fa-solid fa-list"></i>
+
+            Threat Records
+
+        </h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Threat Name</th>
+                <th>Category</th>
+                <th>Severity</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="threatTableBody">
+
+            <!-- JavaScript will load data here -->
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Threat Intelligence Portal | Threat Management Module
+
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="../js/auth.js"></script>
+<script src="../js/threat.js"></script>
+</body>
+</html>

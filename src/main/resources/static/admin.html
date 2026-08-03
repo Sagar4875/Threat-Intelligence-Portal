@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Threat Intelligence Portal</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ============================= -->
+<!-- Sidebar -->
+<!-- ============================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>TIP</h2>
+
+    </div>
+
+    <ul>
+
+        <li class="active">
+
+            <a href="admin.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="category.html">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Categories
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="threat.html">
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threats
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="users.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                Users
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ============================= -->
+<!-- Main Content -->
+<!-- ============================= -->
+
+<div class="main-content">
+
+    <header>
+
+        <div>
+
+            <h1>Security Operations Center</h1>
+
+            <p>Threat Intelligence Portal - Administrator Dashboard</p>
+
+        </div>
+
+        <div class="profile">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <span>Administrator</span>
+
+        </div>
+
+    </header>
+
+    <!-- ============================= -->
+    <!-- Dashboard Cards -->
+    <!-- ============================= -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>Total Users</h3>
+
+            <h2 id="totalUsers">0</h2>
+
+            <small>Registered Users</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <h3>Total Categories</h3>
+
+            <h2 id="totalCategories">0</h2>
+
+            <small>Threat Categories</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-bug"></i>
+
+            <h3>Total Threats</h3>
+
+            <h2 id="totalThreats">0</h2>
+
+            <small>Threat Database</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h3>Critical Threats</h3>
+
+            <h2 id="criticalThreats">0</h2>
+
+            <small>Requires Immediate Action</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-shield-virus"></i>
+
+            <h3>Active Threats</h3>
+
+            <h2 id="activeThreats">0</h2>
+
+            <small>Currently Active</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <h3>Resolved Threats</h3>
+
+            <h2 id="resolvedThreats">0</h2>
+
+            <small>Successfully Closed</small>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Quick Actions -->
+    <!-- ============================= -->
+
+    <section class="quick-actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-buttons">
+
+            <a href="category.html" class="btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Category
+
+            </a>
+
+            <a href="threat.html" class="btn">
+
+                <i class="fa-solid fa-shield-virus"></i>
+
+                Add Threat
+
+            </a>
+
+            <a href="users.html" class="btn">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Add User
+
+            </a>
+
+            <a href="reports.html" class="btn">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Generate Report
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Search & Filter -->
+    <!-- ============================= -->
+
+    <section class="dashboard-filters">
+
+        <h2>Search & Filter Threats</h2>
+
+        <div class="filter-container">
+
+            <input
+                    type="text"
+                    id="searchThreat"
+                    placeholder="Search Threat Name...">
+
+            <select id="severityFilter">
+
+                <option value="">All Severity</option>
+
+                <option value="Critical">Critical</option>
+
+                <option value="High">High</option>
+
+                <option value="Medium">Medium</option>
+
+                <option value="Low">Low</option>
+
+            </select>
+
+            <select id="statusFilter">
+
+                <option value="">All Status</option>
+
+                <option value="Active">Active</option>
+
+                <option value="Resolved">Resolved</option>
+
+                <option value="Investigating">Investigating</option>
+
+                <option value="Monitoring">Monitoring</option>
+
+            </select>
+
+            <select id="sortThreat">
+
+                <option value="latest">Newest First</option>
+
+                <option value="oldest">Oldest First</option>
+
+                <option value="critical">Critical First</option>
+
+                <option value="name">Threat Name (A-Z)</option>
+
+            </select>
+
+        </div>
+
+    </section>
+    <!-- ============================= -->
+    <!-- Recent Threats -->
+    <!-- ============================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-bug"></i>
+
+                Recent Threats
+
+            </h2>
+
+            <span class="table-count">
+
+            Latest 10 Threat Records
+
+        </span>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Threat Name</th>
+
+                    <th>Category</th>
+
+                    <th>Severity</th>
+
+                    <th>Status</th>
+
+                    <th>Date Reported</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="recentThreatTable">
+
+                <!-- Dynamic Data From dashboard.js -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Dashboard Summary -->
+    <!-- ============================= -->
+
+    <section class="cards dashboard-summary">
+
+        <div class="card">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <h3>Highest Severity</h3>
+
+            <h2 id="highestSeverity">
+
+                Critical
+
+            </h2>
+
+            <small>Current Highest Risk</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <h3>Most Common Category</h3>
+
+            <h2 id="mostCommonCategory">
+
+                -
+
+            </h2>
+
+            <small>Most Reported Category</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <h3>Latest Threat</h3>
+
+            <h2 id="latestThreat">
+
+                -
+
+            </h2>
+
+            <small>Most Recent Detection</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            <h3>System Health</h3>
+
+            <h2 id="systemHealth">
+
+                Healthy
+
+            </h2>
+
+            <small>Application Status</small>
+
+        </div>
+
+    </section>
+    <!-- ============================= -->
+    <!-- System Health -->
+    <!-- ============================= -->
+
+    <section class="system-status">
+
+        <h2>System Health</h2>
+
+        <div class="status-grid">
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-server"></i>
+
+                <h3>Application Server</h3>
+
+                <p class="online">Running</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>Database</h3>
+
+                <p class="online">Connected</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-shield-virus"></i>
+
+                <h3>Threat Engine</h3>
+
+                <p class="safe">Protected</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <h3>Registered Users</h3>
+
+                <p id="systemUsers">0 Users</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <h3>Categories</h3>
+
+                <p id="systemCategories">0 Categories</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-bug"></i>
+
+                <h3>Total Threats</h3>
+
+                <p id="systemThreats">0 Threats</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Recent Security Activities -->
+    <!-- ============================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                Recent Security Activities
+
+            </h2>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Time</th>
+
+                    <th>Module</th>
+
+                    <th>Description</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="activityTable">
+
+                <tr>
+
+                    <td colspan="4" style="text-align:center;">
+
+                        Loading Activities...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Latest Security Alerts -->
+    <!-- ============================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-bell"></i>
+
+                Latest Security Alerts
+
+            </h2>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Alert</th>
+
+                    <th>Severity</th>
+
+                    <th>Status</th>
+
+                    <th>Date</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="alertTable">
+
+                <tr>
+
+                    <td colspan="4" style="text-align:center;">
+
+                        Loading Alerts...
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+    <!-- ============================= -->
+    <!-- Charts Section -->
+    <!-- ============================= -->
+
+    <section class="charts-section">
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                    Threat Severity Distribution
+
+                </h2>
+
+            </div>
+
+            <canvas id="severityChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Monthly Threat Detection
+
+                </h2>
+
+            </div>
+
+            <canvas id="monthlyChart"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Dashboard Information -->
+    <!-- ============================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Dashboard Information
+
+            </h2>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <tbody>
+
+                <tr>
+
+                    <td><strong>Project</strong></td>
+
+                    <td>Threat Intelligence Portal</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Technology</strong></td>
+
+                    <td>Spring Boot | MySQL | HTML | CSS | JavaScript</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Framework</strong></td>
+
+                    <td>Spring Boot REST API</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Database</strong></td>
+
+                    <td>MySQL</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Authentication</strong></td>
+
+                    <td>Spring Security</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Charts</strong></td>
+
+                    <td>Chart.js</td>
+
+                </tr>
+
+                <tr>
+
+                    <td><strong>Status</strong></td>
+
+                    <td>
+
+                    <span class="status online">
+
+                        Running Successfully
+
+                    </span>
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- Footer -->
+    <!-- ============================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <p>
+
+                © 2026 Threat Intelligence Portal
+
+            </p>
+
+            <p>
+
+                Developed using Spring Boot, MySQL, HTML, CSS & JavaScript
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<!-- ============================= -->
+<!-- External Libraries -->
+<!-- ============================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Dashboard Script -->
+
+</body>
+<script src="../js/auth.js"></script>
+<script src="../js/dashboard.js"></script>
+</html>
+
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Management | Threat Intelligence Portal</title>
+
+    <!-- Common Dashboard CSS -->
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+    <!-- User Module CSS -->
+    <link rel="stylesheet"
+          href="../css/users.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ========================================= -->
+<!-- Sidebar -->
+<!-- ========================================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>TIP</h2>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="admin.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="category.html">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Categories
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="threat.html">
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threats
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="users.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                Users
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ========================================= -->
+<!-- Main Content -->
+<!-- ========================================= -->
+
+<div class="main-content">
+
+    <!-- Header -->
+
+    <header>
+
+        <div>
+
+            <h1>User Management</h1>
+
+            <p>
+
+                Manage administrators and analysts securely.
+
+            </p>
+
+        </div>
+
+        <div class="profile">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <span>Administrator</span>
+
+        </div>
+
+    </header>
+
+    <!-- ========================================= -->
+    <!-- Statistics -->
+    <!-- ========================================= -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>Total Users</h3>
+
+            <h2 id="totalUsers">
+
+                0
+
+            </h2>
+
+            <small>Registered Portal Users</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <h3>Administrators</h3>
+
+            <h2 id="adminUsers">
+
+                0
+
+            </h2>
+
+            <small>System Administrators</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-secret"></i>
+
+            <h3>Analysts</h3>
+
+            <h2 id="analystUsers">
+
+                0
+
+            </h2>
+
+            <small>Security Analysts</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <h3>Active Users</h3>
+
+            <h2 id="activeUsers">
+
+                0
+
+            </h2>
+
+            <small>Currently Active</small>
+
+        </div>
+
+    </section>
+    <!-- ========================================= -->
+    <!-- User Management Form -->
+    <!-- ========================================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                User Management
+
+            </h2>
+
+        </div>
+
+        <form id="userForm">
+
+            <!-- Hidden User ID -->
+
+            <input
+                    type="hidden"
+                    id="userId">
+
+            <div class="form-grid">
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+
+                        Full Name
+
+                    </label>
+
+                    <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter Full Name"
+                            required>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+
+                        Email Address
+
+                    </label>
+
+                    <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email Address"
+                            required>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+
+                        Password
+
+                    </label>
+
+                    <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter Password"
+                            required>
+
+                </div>
+
+                <!-- Role -->
+
+                <div class="form-group">
+
+                    <label for="role">
+
+                        User Role
+
+                    </label>
+
+                    <select id="role">
+
+                        <option value="ADMIN">
+
+                            Administrator
+
+                        </option>
+
+                        <option value="ANALYST">
+
+                            Analyst
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="status">
+
+                        Status
+
+                    </label>
+
+                    <select id="status">
+
+                        <option value="Active">
+
+                            Active
+
+                        </option>
+
+                        <option value="Inactive">
+
+                            Inactive
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="form-buttons">
+
+                <button
+                        type="submit"
+                        class="btn"
+                        id="saveBtn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save User
+
+                </button>
+
+                <button
+                        type="button"
+                        class="btn"
+                        id="updateBtn">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    Update User
+
+                </button>
+
+                <button
+                        type="reset"
+                        class="btn"
+                        id="clearBtn">
+
+                    <i class="fa-solid fa-eraser"></i>
+
+                    Clear Form
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+    <!-- ========================================= -->
+    <!-- Search & Filter -->
+    <!-- ========================================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Search & Filter Users
+
+            </h2>
+
+        </div>
+
+        <div class="filter-container">
+
+            <!-- Search -->
+
+            <input
+                    type="text"
+                    id="searchUser"
+                    placeholder="Search by Name or Email...">
+
+            <!-- Role Filter -->
+
+            <select id="roleFilter">
+
+                <option value="">
+
+                    All Roles
+
+                </option>
+
+                <option value="ADMIN">
+
+                    Administrator
+
+                </option>
+
+                <option value="ANALYST">
+
+                    Analyst
+
+                </option>
+
+            </select>
+
+            <!-- Status Filter -->
+
+            <select id="statusFilter">
+
+                <option value="">
+
+                    All Status
+
+                </option>
+
+                <option value="Active">
+
+                    Active
+
+                </option>
+
+                <option value="Inactive">
+
+                    Inactive
+
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- User List -->
+    <!-- ========================================= -->
+
+    <section class="dashboard-table">
+
+        <div class="table-header">
+
+            <h2>
+
+                <i class="fa-solid fa-users"></i>
+
+                Registered Users
+
+            </h2>
+
+            <span class="table-count">
+
+            System Users
+
+        </span>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Full Name</th>
+
+                    <th>Email</th>
+
+                    <th>Role</th>
+
+                    <th>Status</th>
+
+                    <th width="170">
+
+                        Actions
+
+                    </th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="userTableBody">
+
+                <!-- Dynamic Data Loaded by users.js -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- User Summary -->
+    <!-- ========================================= -->
+
+    <section class="cards dashboard-summary">
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <h3>Newest User</h3>
+
+            <h2 id="latestUser">
+
+                -
+
+            </h2>
+
+            <small>Recently Registered</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <h3>Administrator Ratio</h3>
+
+            <h2 id="adminRatio">
+
+                0%
+
+            </h2>
+
+            <small>Total Administrators</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-user-secret"></i>
+
+            <h3>Analyst Ratio</h3>
+
+            <h2 id="analystRatio">
+
+                0%
+
+            </h2>
+
+            <small>Total Analysts</small>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-chart-simple"></i>
+
+            <h3>System Usage</h3>
+
+            <h2 id="systemUsage">
+
+                Normal
+
+            </h2>
+
+            <small>User Activity</small>
+
+        </div>
+
+    </section>
+    <!-- ========================================= -->
+    <!-- User Statistics -->
+    <!-- ========================================= -->
+
+    <section class="system-status">
+
+        <h2>User Statistics</h2>
+
+        <div class="status-grid">
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Total Users</h3>
+
+                <p id="statTotalUsers">0</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <h3>Administrators</h3>
+
+                <p id="statAdmins">0</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-user-secret"></i>
+
+                <h3>Analysts</h3>
+
+                <p id="statAnalysts">0</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <h3>Active Users</h3>
+
+                <p id="statActiveUsers" class="online">
+
+                    0
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Footer -->
+    <!-- ========================================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <p>
+
+                © 2026 Threat Intelligence Portal
+
+            </p>
+
+            <p>
+
+                User Management Module
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<!-- ========================================= -->
+<!-- JavaScript -->
+<!-- ========================================= -->
+
+<script src="../js/auth.js"></script>
+<script src="../js/users.js"></script>
+</body>
+</html>

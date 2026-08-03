@@ -1,0 +1,336 @@
+/* ===========================
+   THREAT INTELLIGENCE PORTAL
+   STYLE SHEET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0f172a;
+
+    background-image:
+            radial-gradient(circle at top left,#1d4ed8 0%,transparent 25%),
+            radial-gradient(circle at bottom right,#2563eb 0%,transparent 25%);
+
+    overflow:hidden;
+
+}
+
+.container{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.login-card{
+
+    width:430px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    padding:40px;
+
+    box-shadow:
+            0 0 25px rgba(37,99,235,.30);
+
+}
+
+.logo{
+
+    text-align:center;
+    margin-bottom:35px;
+
+}
+
+.logo i{
+
+    font-size:70px;
+
+    color:#3b82f6;
+
+    margin-bottom:15px;
+
+}
+
+.logo h1{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.logo p{
+
+    color:#cbd5e1;
+
+    font-size:15px;
+
+}
+
+.input-box{
+
+    margin-bottom:22px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    background:#1e293b;
+
+    color:white;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.input-box input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.input-box input:focus{
+
+    border:1px solid #3b82f6;
+
+    box-shadow:
+            0 0 10px rgba(59,130,246,.5);
+
+}
+.login-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn i{
+
+    margin-right:8px;
+
+}
+
+.login-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 18px rgba(37,99,235,.7);
+
+}
+
+.login-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+}
+
+.footer p{
+
+    color:#cbd5e1;
+
+    font-size:13px;
+
+    margin-top:6px;
+
+}
+
+/* ========= Floating Animation ========= */
+
+.login-card{
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ========= Responsive ========= */
+
+@media(max-width:768px){
+
+    .login-card{
+
+        width:90%;
+
+        padding:30px;
+
+    }
+
+    .logo h1{
+
+        font-size:24px;
+
+    }
+
+    .logo i{
+
+        font-size:60px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .login-card{
+
+        width:95%;
+
+        padding:25px;
+
+    }
+
+    .logo h1{
+
+        font-size:21px;
+
+    }
+
+    .logo p{
+
+        font-size:13px;
+
+    }
+
+    .input-box input{
+
+        font-size:14px;
+
+        padding:12px 14px;
+
+    }
+
+    .login-btn{
+
+        font-size:15px;
+
+        padding:13px;
+
+    }
+
+}
+
+/* ========= Scrollbar ========= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}

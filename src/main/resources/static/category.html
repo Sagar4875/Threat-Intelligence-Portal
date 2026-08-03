@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Category Management | Threat Intelligence Portal</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/category.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>TIP</h2>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="admin.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="category.html">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Categories
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="threat.html">
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threats
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="users.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                Users
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+    <!-- Header -->
+
+    <header>
+
+        <div>
+
+            <h1>
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                Category Management
+
+            </h1>
+
+            <p>
+
+                Create, Update and Manage Threat Categories
+
+            </p>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CATEGORY FORM ================= -->
+
+    <section class="dashboard-table">
+
+        <h2>
+
+            <i class="fa-solid fa-folder-plus"></i>
+
+            Add / Update Category
+
+        </h2>
+
+        <form id="categoryForm">
+
+            <input
+                    type="hidden"
+                    id="categoryId">
+
+            <div class="form-group">
+
+                <label for="categoryName">
+
+                    Category Name
+
+                </label>
+
+                <input
+                        type="text"
+                        id="categoryName"
+                        placeholder="Enter Category Name"
+                        required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="description">
+
+                    Description
+
+                </label>
+
+                <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Enter Category Description"
+                        required></textarea>
+
+            </div>
+
+            <div style="margin-top:20px; display:flex; gap:15px;">
+
+                <button
+                        type="submit"
+                        class="btn"
+                        id="saveButton">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Category
+
+                </button>
+
+                <button
+                        type="reset"
+                        class="btn">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <!-- ================= CATEGORY TABLE ================= -->
+
+    <section class="dashboard-table">
+
+        <h2>
+
+            <i class="fa-solid fa-table"></i>
+
+            Category List
+
+        </h2>
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Category Name</th>
+
+                    <th>Description</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="categoryTableBody">
+                <!-- Categories will be loaded here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <p>
+
+                © 2026 Threat Intelligence Portal | Category Management Module
+
+            </p>
+
+            <p>
+
+                Manage and organize cyber threat categories efficiently.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script src="../js/auth.js"></script>
+
+<script src="../js/category.js"></script>
+
+</body>
+
+</html>

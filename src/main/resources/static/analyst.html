@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Analyst Dashboard | Threat Intelligence Portal</title>
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h2>TIP</h2>
+
+    </div>
+
+    <ul>
+
+        <li class="active">
+
+            <a href="analyst.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="threat.html">
+
+                <i class="fa-solid fa-bug"></i>
+
+                Threats
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="main-content">
+
+    <header>
+
+        <div>
+
+            <h1>Analyst Dashboard</h1>
+
+            <p>Threat Intelligence Portal</p>
+
+        </div>
+
+        <div class="profile">
+
+            <i class="fa-solid fa-user-secret"></i>
+
+            <span>Security Analyst</span>
+
+        </div>
+
+    </header>
+
+    <section class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-bug"></i>
+
+            <h3>Total Threats</h3>
+
+            <h2>340</h2>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h3>Critical Threats</h3>
+
+            <h2>28</h2>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-shield-virus"></i>
+
+            <h3>Resolved</h3>
+
+            <h2>190</h2>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <h3>Investigating</h3>
+
+            <h2>35</h2>
+
+        </div>
+
+    </section>
+
+    <section class="quick-actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-buttons">
+
+            <a href="threat.html" class="btn">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Search Threat
+
+            </a>
+
+            <a href="reports.html" class="btn">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                View Reports
+
+            </a>
+
+        </div>
+
+    </section>
+    <section class="dashboard-table">
+
+        <h2>Recent Threat Intelligence</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Threat Name</th>
+                <th>Severity</th>
+                <th>Source</th>
+                <th>Status</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <td>201</td>
+                <td>Emotet Malware</td>
+                <td>Critical</td>
+                <td>CISA</td>
+                <td><span class="status critical">Active</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>202</td>
+                <td>Spear Phishing</td>
+                <td>High</td>
+                <td>MITRE ATT&CK</td>
+                <td><span class="status high">Investigating</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>203</td>
+                <td>SQL Injection</td>
+                <td>Medium</td>
+                <td>OWASP</td>
+                <td><span class="status medium">Resolved</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>204</td>
+                <td>Botnet Activity</td>
+                <td>High</td>
+                <td>AlienVault OTX</td>
+                <td><span class="status high">Monitoring</span></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <section class="system-status">
+
+        <h2>Threat Intelligence Summary</h2>
+
+        <div class="status-grid">
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-shield-virus"></i>
+
+                <h3>Threat Feed</h3>
+
+                <p class="online">Active</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-satellite-dish"></i>
+
+                <h3>Feed Sources</h3>
+
+                <p>12 Connected</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <h3>Latest Alerts</h3>
+
+                <p>8 New Alerts</p>
+
+            </div>
+
+            <div class="status-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>Last Updated</h3>
+
+                <p>2 Minutes Ago</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+
+            © 2026 Threat Intelligence Portal |
+            Security Analyst Dashboard
+
+        </p>
+
+    </footer>
+
+</div>
+<script src="../js/auth.js"></script>
+<script src="../js/analyst.js"></script>
+</body>
+
+</html>
